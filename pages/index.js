@@ -24,7 +24,7 @@ export default function Home() {
       return;
     }
     saveTodos();
-  }, []);
+  }, [todos]);
 
   const onKeyUpHandler = (event) => {
     if (event.key !== "Enter") {
@@ -69,7 +69,7 @@ export default function Home() {
     setTodos([...todos]);
   };
   const saveTodos = () => {
-    const todosStr = JSON.stringtify(todos);
+    const todosStr = JSON.stringify(todos);
     localStorage.setItem("react-todos", todosStr);
   };
 
